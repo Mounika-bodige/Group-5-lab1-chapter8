@@ -26,45 +26,31 @@
         <script type="text/javascript">
             for(var i=0;i<prices.length;i++)
             {
-              outputCartRow(filenames[i],titles[i],quantities[i],prices[i],""); //this is a loop wich calls the function outputCartRow() and passes the values. 
+              outputCartRow(filenames[i],titles[i],quantities[i],prices[i],"");
             }
-        </script> 
-        <!-- <tr>
-            <td><img src="images/106020.jpg"></td>
-            <td>Girl with a Pearl Earring</td>
-            <td>3</td>
-            <td>$80.00</td>
-            <td>$240.00</td>
-        </tr>
-        <tr>
-            <td><img src="images/116010.jpg"></td>
-            <td>Artist Holding a Thistle</td>
-            <td>1</td>
-            <td>$125.00.00</td>
-            <td>$125.00</td>
-        </tr>
-        <tr>
-            <td><img src="images/120010.jpg"></td>
-            <td>Portrait of Eleanor of Toledo</td>
-            <td>2</td>
-            <td>$75.00</td>
-            <td>$150.00</td>
-        </tr>         -->
+        </script>       
         <tr class="totals">
             <td colspan="4">Subtotal</td>
-            <td>$00</td>
+            <td><script type="text/javascript">document.write("$"+st.toFixed(2));</script></td>
         </tr>
         <tr class="totals">
             <td colspan="4">Tax</td>
-            <td>$00</td>
+            <td><script type="text/javascript">var k=st*0.1;document.write("$"+st*0.1.toFixed(2));</script></td>
         </tr>
         <tr class="totals">
             <td colspan="4">Shipping</td>
-            <td>$00</td>
+            <td><script type="text/javascript">
+                var shipping=0;
+                if(st<1000)
+                {
+                 shipping=40;
+                }
+                document.write("$"+shipping.toFixed(2));
+            </script></td>
         </tr>
         <tr class="totals focus">
             <td colspan="4">Grand Total</td>
-            <td>$00</td>
+            <td><script type="text/javascript">var gt=st+k+shipping;document.write("$"+gt.toFixed(2));</script></td>
         </tr>
     </tbody>
 </table>
